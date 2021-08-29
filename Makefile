@@ -21,4 +21,4 @@ format:
 	black --line-length 100 tests.py
 
 tests:
-	pytest tests.py --verbose
+	pytest tests.py -vv
