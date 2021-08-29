@@ -5,8 +5,10 @@ class Bottles(object):
     }
 
     @staticmethod
-    def verses(*verses_num: int):
-        return '\n\n'.join([Bottles.verse(verse) for verse in verses_num])
+    def verses(start_verse: int, stop_verse: int):
+        start_verse, stop_verse = sorted([start_verse, stop_verse], reverse=True)
+        verses = range(start_verse, stop_verse - 1, -1)
+        return '\n\n'.join([Bottles.verse(verse) for verse in verses])
 
     @staticmethod
     def verse(verse_num: int):
