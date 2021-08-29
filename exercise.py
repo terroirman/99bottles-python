@@ -1,7 +1,6 @@
 class Bottles(object):
 
     plural: dict = {
-        0: '',
         1: ''
     }
 
@@ -16,4 +15,10 @@ class Bottles(object):
     @staticmethod
     def phrase2(bottle_num: int):
         s = Bottles.plural.get(bottle_num, 's')
-        return f'Take one down and pass it around, {bottle_num} bottle{s} of beer on the wall.'
+        phrase2: dict = {
+            0: 'Take it down and pass it around, no more bottles of beer on the wall.',
+        }
+        return phrase2.get(
+            bottle_num,
+            f'Take one down and pass it around, {bottle_num} bottle{s} of beer on the wall.'
+        )

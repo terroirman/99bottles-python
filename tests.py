@@ -33,7 +33,6 @@ class TestBottles:
 
         assert expected == self.bottles.verse(2)
 
-    @pytest.mark.skip(reason="not yet implemented")
     def test_verse_1(self):
         expected = (
             "1 bottle of beer on the wall, 1 bottle of beer.\n"
