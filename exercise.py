@@ -4,7 +4,12 @@ class Bottles(object):
         1: ''
     }
 
-    def verse(self, verse_num: int):
+    @staticmethod
+    def verses(*verses_num: int):
+        return '\n\n'.join([Bottles.verse(verse) for verse in verses_num])
+
+    @staticmethod
+    def verse(verse_num: int):
         return Bottles.phrase1(verse_num) + '\n' + Bottles.phrase2(verse_num-1)
 
     @staticmethod
@@ -29,3 +34,7 @@ class Bottles(object):
             bottle_num,
             f'Take one down and pass it around, {bottle_num} bottle{s} of beer on the wall.'
         )
+
+
+if __name__ == '__main__':
+    print(Bottles.verses(99, 98))
